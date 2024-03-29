@@ -6,9 +6,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 // Import middleware
-const sessionMiddleware = require('./middlewares/sessionMiddleware');
-const authMiddleware = require('./middlewares/authMiddleware');
-const errorMiddleware = require('./middlewares/errorMiddleware');
+const sessionMiddleware = require('./middleware/sessionMiddleware');
+const authMiddleware = require('./middleware/authMiddleware');
+const errorMiddleware = require('./middleware/errorMiddleware');
 
 // Import routes
 const authRoutes = require('./routes/authRoutes');
