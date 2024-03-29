@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const OAuth2Strategy = require('passport-oauth2').Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const app = express();
 const PORT = process.env.PORT || 3000;
