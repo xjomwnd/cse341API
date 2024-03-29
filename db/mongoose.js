@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const config = require('./config'); // Assuming you have a config.js file for configuration
 
 // MongoDB connection URI
-const uri = config.mongodb.uri; // Replace with your MongoDB connection URI
+const uri = config.mongodb.uri; mongodb+srv://ndimong:<password>@cluster0.iwufs.mongodb.net/
 
 // Connect to MongoDB
 mongoose.connect(uri, {
