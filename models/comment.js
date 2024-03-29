@@ -18,7 +18,7 @@ router.get('/:postId', async (req, res) => {
 
 // Add a comment to a post
 router.post('/:postId', validateComment, async (req, res) => {
-    const comment = new Comment({
+    const comment = new comment({
         postId: req.params.postId,
         userId: req.body.userId,
         text: req.body.text
