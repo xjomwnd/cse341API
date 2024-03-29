@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Comment = require('../models/comment');
-const { validateComment } = require('../middleware/validation');
+const validation = require('../middleware/validation');
 
 // Get comments for a post
 router.get('/:postId', async (req, res) => {
