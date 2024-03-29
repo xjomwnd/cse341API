@@ -1,47 +1,48 @@
 const express = require('express');
-const path = require('path');
-const session = require('express-session');
-const passport = require('passport');
 const bodyParser = require('body-parser');
-const cors = require('cors');
+const session = require('express-session');
+const authMiddleware = require('./middleware/authMiddleware'); // Assuming you have auth middleware
+const sessionMiddleware = require('./middleware/sessionMiddleware'); // Assuming you have session middleware
 
-// Import middleware
-const sessionMiddleware = require('./middleware/sessionMiddleware');
-const authMiddleware = require('./middleware/authMiddleware');
-const errorMiddleware = require('./middleware/errorMiddleware');
-
-// Import routes
-const authRoutes = require('./routes/authRoutes');
-const userRoutes = require('./routes/userRoutes');
-
-// Create Express app
 const app = express();
 
 // Middleware
 app.use(bodyParser.json());
-app.use(sessionMiddleware);
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
 
+// Session middleware
+app.use(session({
+    secret: 'your_secret_key', // Change this to a secure secret
+    resave: false,
+    saveUninitialized: false
+}));
 app.use(sessionMiddleware);
 
-// Passport configuration
-require('./config/passport')(passport);
+// Custom authentication middleware
+app.use(authMiddleware);
+
+// Dummy data for demonstration purposes
+let socialMediaData = [
+    { username: 'user1', platform: 'twitter', content: 'This is a tweet!' },
+    { username: 'user2', platform: 'facebook', content: 'A Facebook post.' }
+];
 
 // Routes
-app.use('/auth', authRoutes);
-app.use('/users', authMiddleware, userRoutes);
 
-// Serve static files
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Index route
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+// Get all social media posts
+app.get('/api/posts', (req, res) => {
+    res.json(socialMediaData);
 });
 
-// Error handling middleware
-app.use(errorMiddleware);
+// Add a new social media post
+app.post('/api/posts', (req, res) => {
+    const newPost = req.body;
+    socialMediaData.push(newPost);
+    res.status(201).json(newPost);
+});
 
-module.exports = app;
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
