@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Feed = require('../models/Feed');
+const Feed = require('../models/feed');
 const { authenticateUser } = require('../middleware/authentication');
 
 // Get user's feed
