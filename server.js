@@ -2,17 +2,19 @@ const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const passport = require('passport');
+const bodyParser = require('body-parser'); // Add body-parser
 const OAuth2Strategy = require('passport-oauth2').Strategy;
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const mongoose = require('mongoose'); // Import Mongoose
+const mongoose = require('mongoose');
 const cors = require('cors');
+
+const app = express(); // Define app here
 
 // Middleware for parsing JSON bodies
 app.use(bodyParser.json());
 
 // Middleware for handling sessions
 app.use(session({
-  secret: 'your_secret_key', // Change this to a secure secret key
+  secret: 'your_secret_key',
   resave: false,
   saveUninitialized: false
 }));
@@ -23,7 +25,7 @@ app.use(passport.session());
 
 // Middleware for setting headers
 app.use((req, res, next) => {
-  res.setHeader('Content-Type', 'application/json'); // Example header
+  res.setHeader('Content-Type', 'application/json');
   next();
 });
 
@@ -31,9 +33,13 @@ app.use((req, res, next) => {
 app.use(cors());
 
 // Connect to MongoDB database
-mongoose.connect('mongodb+srv://ndimong:<password>@cluster0.iwufs.mongodb.net/')
-  .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.error('MongoDB Connection Error:', err));
+mongoose.connect('mongodb+srv://ndimong:your_actual_password@cluster0.iwufs.mongodb.net/',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }
+).then(() => console.log('MongoDB Connected'))
+ .catch(err => console.error('MongoDB Connection Error:', err));
 
 // Dummy data for demonstration
 let users = [
@@ -51,7 +57,6 @@ passport.use(new OAuth2Strategy({
   callbackURL: 'http://localhost:3000/callback'
 },
 function(accessToken, refreshToken, profile, cb) {
-  // Dummy user profile retrieval
   const user = users.find(user => user.id === profile.id);
   return cb(null, user);
 }));
@@ -76,16 +81,14 @@ app.get('/profile', ensureAuthenticated, (req, res) => {
 });
 
 app.post('/profile', ensureAuthenticated, (req, res) => {
-  // Update user profile (example)
   const { name } = req.body;
   req.user.name = name;
   res.json(req.user);
 });
 
 app.delete('/profile', ensureAuthenticated, (req, res) => {
-  // Delete user profile (example)
   users = users.filter(user => user.id !== req.user.id);
-  req.logout(); // Logout the user
+  req.logout();
   res.send('User profile deleted');
 });
 
@@ -97,16 +100,6 @@ function ensureAuthenticated(req, res, next) {
   res.status(401).send('Unauthorized');
 }
 
-// Define a route for the root URL
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
-
-
-
-const app = express();
-const PORT = process.env.PORT || 3000;
-
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -115,7 +108,8 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+const PORT = process.env.PORT || 3000;
 // Start the server
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(3000, () => {
+    console.log(`Server is running on port ${3000}`);
 });
