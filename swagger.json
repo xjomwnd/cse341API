@@ -1,0 +1,38 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Social Media Aggregator API",
+      "description": "API documentation for the Social Media Aggregator project",
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:3000",
+        "description": "Local development server"
+      }
+    ],
+    "paths": {
+      "/posts": {
+        "get": {
+          "summary": "Get all posts",
+          "description": "Returns a list of all posts",
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "content": {
+                "application/json": {
+                  "example": [
+                    {
+                      "id": 1,
+                      "content": "This is a post"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
