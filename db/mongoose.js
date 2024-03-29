@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
-const config = require('./config'); mongodb+srv;//ndimong:<password>@cluster0.iwufs.mongodb.net/
-
+const config = require('./config'); 
+module.exports = {
+    mongodb: {
+        uri: 'mongodb+srv;//ndimong:<password>@cluster0.iwufs.mongodb.net/'
+    }
+};
 
 // MongoDB connection URI
 const uri = config.mongodb.uri; mongodb+srv;//ndimong:<password>@cluster0.iwufs.mongodb.net/
