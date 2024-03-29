@@ -1,6 +1,7 @@
 // Import necessary modules
 const express = require('express');
 const session = require('express-session');
+
 const passport = require('./passport-setup.js');
 
 // Create an Express application
