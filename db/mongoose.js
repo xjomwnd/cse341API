@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const config = require('./config'); // Assuming you have a config.js file for configuration
+const config = require('./config'); mongodb+srv://ndimong:<password>@cluster0.iwufs.mongodb.net/
+
 
 // MongoDB connection URI
 const uri = config.mongodb.uri; mongodb+srv://ndimong:<password>@cluster0.iwufs.mongodb.net/
