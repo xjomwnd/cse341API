@@ -1,9 +1,0 @@
-{
-    "watch": ["src"],   // Directories to watch for changes
-    "ext": "js,json",   // File extensions to watch
-    "exec": "node",     // Command to execute
-    "script": "server.js", // Script to run with nodemon
-    "ignore": ["src/test"],  // Files or directories to ignore
-    "verbose": true     // Show detail on what is causing restarts
-  }
-  
