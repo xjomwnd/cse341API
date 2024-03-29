@@ -1,7 +1,7 @@
 // Import required modules
 const express = require('express');
 const router = express.Router();
-const comment = require('../models/comment');
+const Comment = require('../models/comment');
 const { validateComment } = require('../middleware/validation'); // Import validateComment middleware
 
 // Define route handlers
