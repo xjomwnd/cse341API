@@ -1,0 +1,7 @@
+// default.json
+{
+    "mongodb": {
+      "uri": "YOUR_MONGODB_URI_HERE"
+    }
+  }
+  
