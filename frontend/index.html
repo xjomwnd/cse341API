@@ -4,31 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Media Aggregator</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/large.css"> 
-    <link rel="stylesheet" href="css/medium.css">
-    <link rel="stylesheet" href="css/styles.css"><!-- My custom CSS file -->
+    <!-- Add your CSS stylesheets and JavaScript files here -->
 </head>
-<header class="header">
-    <div class="logo">
-        <img src="logo.png" alt="Social Media Aggregator">
-    </div>
-    <nav class="navigation">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#explore">Explore</a></li>
-            <li><a href="#notifications">Notifications</a></li>
-            <li><a href="#profile">Profile</a></li>
-            <li><a href="#settings">Settings</a></li>
-        </ul>
-    </nav>
-</header>
-
 <body>
-    <div id="app">
-        <!-- Your social media aggregator content will go here -->
-    </div>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">Logo Here</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Explore</a></li>
+                <li><a href="#">Notifications</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+    </header>
 
-    <script src="js/script.js"></script>
+    <!-- Main Content Area -->
+    <main>
+        <section class="feed">
+            <!-- Aggregated posts go here -->
+            <div class="post">
+                <!-- Post preview content -->
+                <div class="profile-pic">Profile Picture</div>
+                <div class="post-content">
+                    <h2>Username</h2>
+                    <p>Post content goes here...</p>
+                    <!-- Media content (image/video) -->
+                    <div class="media">Media Content</div>
+                </div>
+                <!-- Post interaction buttons -->
+                <div class="interactions">
+                    <button>Like</button>
+                    <button>Comment</button>
+                    <button>Share</button>
+                    <button>Bookmark</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="trending-topics">Trending Topics</div>
+            <div class="social-media-platforms">Social Media Platforms</div>
+            <div class="user-profile">User Profile</div>
+        </aside>
+    </main>
+
+    <!-- Notifications -->
+    <section class="notifications">
+        <div class="alerts">Alerts for new likes, comments, or mentions</div>
+        <div class="notification-settings">Notification settings</div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </footer>
 </body>
 </html>
