@@ -1,0 +1,7 @@
+// development.json
+{
+    "mongodb": {
+      "uri": "YOUR_DEVELOPMENT_MONGODB_URI_HERE"
+    }
+  }
+  
