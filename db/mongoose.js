@@ -1,7 +1,8 @@
 const mongoose = require('mongoose'); 
 const config = require('config');
-config();
 
+// Access configuration properties
+const mongodbUri = config.get('mongodb.uri');
 
 module.exports = {
     mongodb: {
