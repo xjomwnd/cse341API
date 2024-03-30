@@ -1,6 +1,6 @@
 // default.json
 {
     "mongodb": {
-      "uri": "YOUR_MONGODB_URI_HERE"
+      "uri": "mongodb+srv;//ndimong:<password>@cluster0.iwufs.mongodb.net/"
     }
   }
