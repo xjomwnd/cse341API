@@ -1,4 +1,3 @@
-// default.json
 {
     "mongodb": {
       "uri": "mongodb+srv;//ndimong:<password>@cluster0.iwufs.mongodb.net/"
