@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-const config = require('./config'); 
+ 
+const config = require('config');
+
 module.exports = {
     mongodb: {
         uri: 'mongodb+srv;//ndimong:<password>@cluster0.iwufs.mongodb.net/'
