@@ -3,6 +3,7 @@
 // Import necessary modules
 const Contact = require('../models/contact'); // Assuming you have a Contact model
 const { validateContactData } = require('./validation'); // Assuming you have a validation module
+const { validateContact } = require('./validate');
 
 // Controller function to create a new contact
 async function createContact(req, res) {
