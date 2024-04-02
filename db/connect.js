@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // MongoDB connection string
-const uri = 'mongodb+srv://ndimong:<password>@cluster0.iwufs.mongodb.net/';
+const uri = 'mongodb+srv://ndimong:<password>@cluster0.iwufs.mongodb.net/<mongodb>';
 
 // Connect to MongoDB
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
