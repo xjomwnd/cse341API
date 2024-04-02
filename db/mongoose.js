@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 // const config = require('config');
 
 // Hardcoded connection string
-const mongodbUri = 'mongodb+srv://ndimong:<password>@cluster0.iwufs.mongodb.net/
+const mongodbUri = 'mongodb+srv://ndimong:<password>@cluster0.iwufs.mongodb.net/'
 /';
 
 // Connect to MongoDB
