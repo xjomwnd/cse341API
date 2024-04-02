@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
-const config = require('config');
+// const config = require('config');
 
-// Access configuration properties
-const mongodbUri = config.get('mongodb.uri');
+// Hardcoded connection string
+const mongodbUri = 'mongodb+srv://ndimong:<password>@cluster0.iwufs.mongodb.net/
+/';
 
 // Connect to MongoDB
 mongoose.connect(mongodbUri, {
