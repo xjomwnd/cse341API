@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose'); // Import Mongoose
 const app = express();
 
 // Middleware
@@ -24,6 +25,11 @@ app.post('/api/posts', (req, res) => {
     socialMediaData.push(newPost);
     res.status(201).json(newPost);
 });
+
+// Connect to MongoDB database
+mongoose.connect('mongodb+srv://ndimong:<password>@cluster0.iwufs.mongodb.net/<database>')
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.error('MongoDB Connection Error:', err));
 
 // Start the server
 const PORT = process.env.PORT || 3000;
