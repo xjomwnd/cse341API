@@ -26,11 +26,6 @@ app.post('/api/posts', (req, res) => {
     res.status(201).json(newPost);
 });
 
-// Connect to MongoDB database
-mongoose.connect('mongodb+srv://ndimong:<password>@cluster0.iwufs.mongodb.net/')
-  .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.error('MongoDB Connection Error:', err));
-
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
