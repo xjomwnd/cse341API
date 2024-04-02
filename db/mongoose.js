@@ -1,15 +1,16 @@
 const mongoose = require('mongoose');
 
 // MongoDB connection string
-const mongodbUri = ' mongodb+srv://mwa21001:<password>@cluster0.dmvu7jc.mongodb.net/';
+const mongodbUri = 'mongodb+srv://ndimong:<password>@cluster0.iwufs.mongodb.net/<database>';
 
 // Connect to MongoDB
-mongoose.connect(mongodbUri)
-  .then(() => {
+mongoose.connect(mongodbUri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => {
     console.log('Connected to MongoDB');
-  })
-  .catch(error => {
+}).catch(error => {
     console.error('Error connecting to MongoDB:', error);
-  });
+});
 
 module.exports = mongoose;
