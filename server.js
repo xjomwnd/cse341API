@@ -27,7 +27,7 @@ app.post('/api/posts', (req, res) => {
 });
 
 // Connect to MongoDB database
-mongoose.connect('mongodb+srv://ndimong:<password>@cluster0.iwufs.mongodb.net/<database>')
+mongoose.connect('mongodb+srv://ndimong:<password>@cluster0.iwufs.mongodb.net/')
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.error('MongoDB Connection Error:', err));
 
